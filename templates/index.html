@@ -5,5 +5,14 @@
 </head>
 <body>
 {{test}}
-</body>
+
+{% from "_forms.html" import render_field %}
+<form method=post action=#>
+    <dl>
+        {{ render_field(form.address) }}
+        {{ render_field(form.farmerMarkets) }}
+    </dl>
+    <p><input type=submit value=submit>
+</form>
+</fieldset>
 </html>
