@@ -12,4 +12,4 @@ class findLocation:
         for doc in collection.find( { "geometry": { "$near": { "$geometry": { "type": "Point", "coordinates": [coordinates[0], coordinates[1]] } }}}):
             result = doc
             break
-        return(repr(result))
+        return(result)
