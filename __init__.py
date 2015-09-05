@@ -4,10 +4,9 @@ from flask.ext.mongoengine import MongoEngine
 from geopy.geocoders import OpenCage
 from findNear import * 
 from addressForm import *
+from mapp import Mapp
 
 app = Flask(__name__)
-app.config["MONGODB_SETTINGS"] = {'DB': 'health_data'}
-app.config["SECRET_KEY"] = "KeepThisS3cr3t"
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -16,22 +15,28 @@ def index():
     
     form = AddressForm(request.form)
     if request.method == 'POST':
+
         """ Find closest bike station to given address """
         collection = db.bike_stations
         addr = request.form.get("address")
-        geolocator = OpenCage('d79317ac2c4be89c2683778d8a95df49')
+        geolocator = OpenCage('d79317ac2c4be89c2683778d8a95df49', timeout=None)
         location = geolocator.geocode(addr)
         compass = findLocation( location.latitude, location.longitude)
         closestBikeStation = compass.nearby(compass.coordinates, collection)
 
-        """ Switch to finding closest farmer's market to bike station """
+        """ Switch to finding closest corner store (farmer's market will be added later)  to bike station """
         compass = findLocation( closestBikeStation['geometry']['coordinates'][0], closestBikeStation['geometry']['coordinates'][1] )
-        collection = db.farmers_markets
+        collection = db.healthy_corner_stores
         closestFarmersMarket = compass.nearby(compass.coordinates, collection)
+
+        """ Mapp generation"""
+        currentMapp = Mapp(location.latitude, location.longitude, 
+                closestBikeStation['geometry']['coordinates'], closestFarmersMarket['geometry']['coordinates'])
+        currentMapp.generateMapp()
 
         """ Return new page with found values plugged into template """
         return render_template("result.html", bikestation=closestBikeStation['properties']['addressStreet'],
-                farmersmarket=closestFarmersMarket['properties']['ADDRESS'])
+                farmersmarket=closestFarmersMarket['properties']['OFFICIAL_STORE_NAME'])
     else:
         return render_template("index.html", form=form)
 
