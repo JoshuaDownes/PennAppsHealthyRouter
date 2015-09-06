@@ -50,7 +50,7 @@
 
 <body>
 
-   <div class="folium-map" id="folium_68ebd86c4e784d1092b67c26689300fe" style="width: 800px; height: 500px"></div>
+   <div class="folium-map" id="folium_334036b49d4b40beafa89eb10f1c637e" style="width: 800px; height: 500px"></div>
 
    <script>
 
@@ -94,8 +94,8 @@
       /*
       Creates the map and adds the selected layers
       */
-      var map = L.map('folium_68ebd86c4e784d1092b67c26689300fe', {
-                                       center:[39.94138, -75.14564],
+      var map = L.map('folium_334036b49d4b40beafa89eb10f1c637e', {
+                                       center:[39.94733, -75.14403],
                                        zoom: 16,
                                        maxBounds: bounds,
                                        layers: [base_tile]
@@ -112,22 +112,22 @@
 
       
       var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
-      var marker_1 = L.marker([39.94131825, 
-							-75.1460895],
+      var marker_1 = L.marker([39.948177, 
+							-75.1440165714],
 							{'icon':marker_1_icon}
 							);
-      marker_1.bindPopup("You're here! 213 south st philadelphia");
+      marker_1.bindPopup("You're here! 105 s 2nd street Philadelphia");
       marker_1._popup.options.maxWidth = 300;
       map.addLayer(marker_1)
       
 
       
-      var circle_1 = L.circle([39.94138, -75.14564], 25, {
+      var circle_1 = L.circle([39.94733, -75.14403], 25, {
                             color: 'black',
                             fillColor: '#0000ff',
                             fillOpacity: 0.6
                             });
-      circle_1.bindPopup("Here first, grab a bike! 523 S. 2nd St.");
+      circle_1.bindPopup("Here first, grab a bike! 191 S. 2nd St.");
       circle_1._popup.options.maxWidth = 300;
       map.addLayer(circle_1)
       
@@ -140,18 +140,18 @@
       circle_2._popup.options.maxWidth = 300;
       map.addLayer(circle_2)
       
-      var circle_3 = L.circle([39.9421693887, -75.1454519795], 25, {
+      var circle_3 = L.circle([39.9501869452, -75.1456810579], 25, {
                             color: 'black',
                             fillColor: '#FFCC00',
                             fillOpacity: 0.6
                             });
-      circle_3.bindPopup("Ride here for something delicious! 2nd and Lombard St, AKA Headhouse*. Open 10am-2pm during May - Thanksgiving");
+      circle_3.bindPopup("Ride here for something delicious! 3rd & Market St, AKA High Street. Open 10am-2pm during May-October");
       circle_3._popup.options.maxWidth = 300;
       map.addLayer(circle_3)
       
 
       
-      var latLngs = [ [39.94131825, -75.1460895],  [39.94138, -75.14564],  [39.9406899855, -75.1486257063], ];
+      var latLngs = [ [39.948177, -75.1440165714],  [39.94733, -75.14403],  [39.9406899855, -75.1486257063], ];
 var line_1 = L.polyline(latLngs,{
 
 
@@ -160,7 +160,7 @@ var line_1 = L.polyline(latLngs,{
       
       map.addLayer(line_1);
       
-      var latLngs = [ [39.94138, -75.14564],  [39.9421693887, -75.1454519795], ];
+      var latLngs = [ [39.94733, -75.14403],  [39.9501869452, -75.1456810579], ];
 var line_2 = L.polyline(latLngs,{
 
 
@@ -169,7 +169,7 @@ var line_2 = L.polyline(latLngs,{
       
       map.addLayer(line_2);
       
-      var latLngs = [ [39.9430885497, -75.1452436994],  [39.9433367817, [-75.1471891995138]], ];
+      var latLngs = [ [39.9499782742, -75.1409900598],  [39.9470178748, [-75.1416540554139]], ];
 var line_3 = L.polyline(latLngs,{
 
 
