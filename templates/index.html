@@ -2,18 +2,42 @@
 <html>
 <head> 
 <title>Healthy Router</title>
-</head>
-<body>
-<h1> Welcome to Healthy Router! </h1>
-<p> Please enter your address. We will tell you the closest bike station and give you a route to your closest Farmer's Market! </p>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+
+</head>
+<body style='background-color: #ACC0C6;'>
+<h1><center>Have an adventure, eat great food </center></h1> <br>
+<center>
+<p> Please enter your address. We will tell you the closest bike station and give you a route to your closest fresh, healthy market! </p>
+<br><br><br>
 {% from "_forms.html" import render_field %}
 <form method=post action=#>
-    <dl>
+    <span>
         {{ render_field(form.address) }}
-        {{ render_field(form.farmerMarkets) }}
-    </dl>
+    </span>
     <p><input type=submit value=submit>
+</center>
 </form>
+<br><br><br><br><br>
+<center><img src="http://2014s.pennapps.com/build/images/logo/dark1.png" style=' height: 180px;'/></center>
 </fieldset>
+<p style='text-align: right'>Made at PennAppsXII by Joshua Downes</p>
 </html>

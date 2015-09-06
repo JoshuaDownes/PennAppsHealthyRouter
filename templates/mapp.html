@@ -50,7 +50,7 @@
 
 <body>
 
-   <div class="folium-map" id="folium_302f0a2df2c74648a318033e2e90e49b" style="width: 500px; height: 400px"></div>
+   <div class="folium-map" id="folium_6cc72fbd64b442ccac48dfe059b92c74" style="width: 800px; height: 500px"></div>
 
    <script>
 
@@ -94,7 +94,7 @@
       /*
       Creates the map and adds the selected layers
       */
-      var map = L.map('folium_302f0a2df2c74648a318033e2e90e49b', {
+      var map = L.map('folium_6cc72fbd64b442ccac48dfe059b92c74', {
                                        center:[39.93445, -75.14541],
                                        zoom: 15,
                                        maxBounds: bounds,
@@ -112,8 +112,8 @@
 
       
       var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
-      var marker_1 = L.marker([39.969448, 
-							-75.213068],
+      var marker_1 = L.marker([39.94131825, 
+							-75.1460895],
 							{'icon':marker_1_icon}
 							);
       marker_1.bindPopup("You're here!");
@@ -124,7 +124,7 @@
       
       var circle_1 = L.circle([39.93445, -75.14541], 25, {
                             color: 'black',
-                            fillColor: '#ff0000',
+                            fillColor: '#0000ff',
                             fillOpacity: 0.6
                             });
       circle_1.bindPopup("Bike Station: Walk here!");
