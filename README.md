@@ -1,4 +1,4 @@
-Markup : ##PennAppsXII Healthy Router##
+##PennAppsXII Healthy Router##
 
 This web app takes a Philadelphia address and returns the nearest bicycle rental station, and a link from that station to the nearest 1) farmer's market, and 2) healthy corner store. All three datasets were provided by OpenPhillyData at OpenPhillyData.org. The purpose of the application is to help improve high levels of obesity by offering Philadelphians:
 
