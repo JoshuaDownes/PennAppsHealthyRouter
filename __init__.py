@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from pymongo import MongoClient
-from flask.ext.mongoengine import MongoEngine
 from geopy.geocoders import OpenCage
 from findNear import * 
 from addressForm import *
@@ -33,10 +32,14 @@ def index():
         collection = db.farmers_markets
         closestFarmersMarket = compass.nearby(compass.coordinates, collection)
 
+        """ Bike path's """
+        collection = db.bike_network
+        closestBikePath = compass.nearby(compass.coordinates, collection)
+
         """ Mapp generation"""
         currentMapp = Mapp(location.latitude, location.longitude, 
                 closestBikeStation['geometry']['coordinates'], closestHealthyStore['geometry']['coordinates'],
-                addr, closestBikeStation, closestHealthyStore, closestFarmersMarket)
+                addr, closestBikeStation, closestHealthyStore, closestFarmersMarket,closestBikePath)
         currentMapp.generateMapp()
 
         """ Return new page with found values plugged into template """

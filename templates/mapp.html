@@ -50,7 +50,7 @@
 
 <body>
 
-   <div class="folium-map" id="folium_1728f7c4a65340348016e1eb434808ad" style="width: 800px; height: 500px"></div>
+   <div class="folium-map" id="folium_68ebd86c4e784d1092b67c26689300fe" style="width: 800px; height: 500px"></div>
 
    <script>
 
@@ -94,9 +94,9 @@
       /*
       Creates the map and adds the selected layers
       */
-      var map = L.map('folium_1728f7c4a65340348016e1eb434808ad', {
+      var map = L.map('folium_68ebd86c4e784d1092b67c26689300fe', {
                                        center:[39.94138, -75.14564],
-                                       zoom: 17,
+                                       zoom: 16,
                                        maxBounds: bounds,
                                        layers: [base_tile]
                                      });
@@ -145,7 +145,7 @@
                             fillColor: '#FFCC00',
                             fillOpacity: 0.6
                             });
-      circle_3.bindPopup("Ride here for something delicious! 2nd and Lombard St, AKA Headhouse*. Open 10am-2pmduring May - Thanksgiving");
+      circle_3.bindPopup("Ride here for something delicious! 2nd and Lombard St, AKA Headhouse*. Open 10am-2pm during May - Thanksgiving");
       circle_3._popup.options.maxWidth = 300;
       map.addLayer(circle_3)
       
@@ -168,6 +168,15 @@ var line_2 = L.polyline(latLngs,{
 });
       
       map.addLayer(line_2);
+      
+      var latLngs = [ [39.9430885497, -75.1452436994],  [39.9433367817, [-75.1471891995138]], ];
+var line_3 = L.polyline(latLngs,{
+
+
+
+});
+      
+      map.addLayer(line_3);
       
 
       
