@@ -50,7 +50,7 @@
 
 <body>
 
-   <div class="folium-map" id="folium_b14b5d37157d417b899800d8602a7fb8" style="width: 800px; height: 500px"></div>
+   <div class="folium-map" id="folium_1728f7c4a65340348016e1eb434808ad" style="width: 800px; height: 500px"></div>
 
    <script>
 
@@ -94,9 +94,9 @@
       /*
       Creates the map and adds the selected layers
       */
-      var map = L.map('folium_b14b5d37157d417b899800d8602a7fb8', {
+      var map = L.map('folium_1728f7c4a65340348016e1eb434808ad', {
                                        center:[39.94138, -75.14564],
-                                       zoom: 15,
+                                       zoom: 17,
                                        maxBounds: bounds,
                                        layers: [base_tile]
                                      });
@@ -127,7 +127,7 @@
                             fillColor: '#0000ff',
                             fillOpacity: 0.6
                             });
-      circle_1.bindPopup("Here first! 523 S. 2nd St.");
+      circle_1.bindPopup("Here first, grab a bike! 523 S. 2nd St.");
       circle_1._popup.options.maxWidth = 300;
       map.addLayer(circle_1)
       
@@ -136,9 +136,18 @@
                             fillColor: '#00ff00',
                             fillOpacity: 0.6
                             });
-      circle_2.bindPopup("Ride here! 339 Bainbridge St\n, AKA Queen Village Food Market");
+      circle_2.bindPopup("Ride here! Pick up something healthy! 339 Bainbridge St, AKA Queen Village Food Market");
       circle_2._popup.options.maxWidth = 300;
       map.addLayer(circle_2)
+      
+      var circle_3 = L.circle([39.9421693887, -75.1454519795], 25, {
+                            color: 'black',
+                            fillColor: '#FFCC00',
+                            fillOpacity: 0.6
+                            });
+      circle_3.bindPopup("Ride here for something delicious! 2nd and Lombard St, AKA Headhouse*. Open 10am-2pmduring May - Thanksgiving");
+      circle_3._popup.options.maxWidth = 300;
+      map.addLayer(circle_3)
       
 
       
@@ -150,6 +159,15 @@ var line_1 = L.polyline(latLngs,{
 });
       
       map.addLayer(line_1);
+      
+      var latLngs = [ [39.94138, -75.14564],  [39.9421693887, -75.1454519795], ];
+var line_2 = L.polyline(latLngs,{
+
+
+
+});
+      
+      map.addLayer(line_2);
       
 
       

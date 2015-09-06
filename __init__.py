@@ -27,17 +27,21 @@ def index():
         """ Switch to finding closest corner store (farmer's market will be added later)  to bike station """
         compass = findLocation( closestBikeStation['geometry']['coordinates'][1], closestBikeStation['geometry']['coordinates'][0] )
         collection = db.healthy_corner_stores
+        closestHealthyStore = compass.nearby(compass.coordinates, collection)
+
+        """ Farmer's market """
+        collection = db.farmers_markets
         closestFarmersMarket = compass.nearby(compass.coordinates, collection)
 
         """ Mapp generation"""
         currentMapp = Mapp(location.latitude, location.longitude, 
-                closestBikeStation['geometry']['coordinates'], closestFarmersMarket['geometry']['coordinates'],
-                addr, closestBikeStation, closestFarmersMarket)
+                closestBikeStation['geometry']['coordinates'], closestHealthyStore['geometry']['coordinates'],
+                addr, closestBikeStation, closestHealthyStore, closestFarmersMarket)
         currentMapp.generateMapp()
 
         """ Return new page with found values plugged into template """
         return render_template("result.html", bikestation=closestBikeStation['properties']['addressStreet'],
-                farmersmarket=closestFarmersMarket['properties']['OFFICIAL_STORE_NAME'])
+                market=closestHealthyStore['properties']['OFFICIAL_STORE_NAME'], farmersmarket=closestFarmersMarket['properties']['NAME'])
     else:
         return render_template("index.html", form=form)
 
