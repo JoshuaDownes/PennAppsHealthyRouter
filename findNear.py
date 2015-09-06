@@ -9,7 +9,7 @@ class findLocation:
 
     def nearby(self, coordinates, collection):
         result = None
-        for doc in collection.find( { "geometry": { "$near": { "$geometry": { "type": "Point", "coordinates": [coordinates[0], coordinates[1]] } }}}):
+        for doc in collection.find( { "geometry": { "$near": { "$geometry": { "type": "Point", "coordinates": [coordinates[1], coordinates[0]] } }}}):
             result = doc
             break
         return(result)

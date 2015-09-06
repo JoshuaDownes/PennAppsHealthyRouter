@@ -50,7 +50,7 @@
 
 <body>
 
-   <div class="folium-map" id="folium_6cc72fbd64b442ccac48dfe059b92c74" style="width: 800px; height: 500px"></div>
+   <div class="folium-map" id="folium_b14b5d37157d417b899800d8602a7fb8" style="width: 800px; height: 500px"></div>
 
    <script>
 
@@ -94,8 +94,8 @@
       /*
       Creates the map and adds the selected layers
       */
-      var map = L.map('folium_6cc72fbd64b442ccac48dfe059b92c74', {
-                                       center:[39.93445, -75.14541],
+      var map = L.map('folium_b14b5d37157d417b899800d8602a7fb8', {
+                                       center:[39.94138, -75.14564],
                                        zoom: 15,
                                        maxBounds: bounds,
                                        layers: [base_tile]
@@ -116,31 +116,40 @@
 							-75.1460895],
 							{'icon':marker_1_icon}
 							);
-      marker_1.bindPopup("You're here!");
+      marker_1.bindPopup("You're here! 213 south st philadelphia");
       marker_1._popup.options.maxWidth = 300;
       map.addLayer(marker_1)
       
 
       
-      var circle_1 = L.circle([39.93445, -75.14541], 25, {
+      var circle_1 = L.circle([39.94138, -75.14564], 25, {
                             color: 'black',
                             fillColor: '#0000ff',
                             fillOpacity: 0.6
                             });
-      circle_1.bindPopup("Bike Station: Walk here!");
+      circle_1.bindPopup("Here first! 523 S. 2nd St.");
       circle_1._popup.options.maxWidth = 300;
       map.addLayer(circle_1)
       
-      var circle_2 = L.circle([39.9363656826, -75.1483687902], 25, {
+      var circle_2 = L.circle([39.9406899855, -75.1486257063], 25, {
                             color: 'black',
                             fillColor: '#00ff00',
                             fillOpacity: 0.6
                             });
-      circle_2.bindPopup("Fresh and Delicious Food: Ride here!");
+      circle_2.bindPopup("Ride here! 339 Bainbridge St\n, AKA Queen Village Food Market");
       circle_2._popup.options.maxWidth = 300;
       map.addLayer(circle_2)
       
 
+      
+      var latLngs = [ [39.94131825, -75.1460895],  [39.94138, -75.14564],  [39.9406899855, -75.1486257063], ];
+var line_1 = L.polyline(latLngs,{
+
+
+
+});
+      
+      map.addLayer(line_1);
       
 
       
